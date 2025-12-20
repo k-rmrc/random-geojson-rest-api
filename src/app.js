@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use("/", apiRouter)
 app.use("/api", apiRouter)
-app.use("/api/feature/point", featureRouter)
+app.use("/", featureRouter)
 
 
 app.listen(PORT, () => {

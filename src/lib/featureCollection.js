@@ -28,6 +28,14 @@ export class FeatureCollection {
          */
         this.features = [];
     }
+    /**
+     * add Feature to features Array
+     * 
+     * @param {Object} feature - Feature object which should be added to Feature Collection
+     */
+    addFeature(feature) {
+        this.features.push(feature)
+    }
 
     /**
      * Returns the FeatureCollection as a valid GeoJSON object.
@@ -39,7 +47,7 @@ export class FeatureCollection {
     getFeatureCollection() {
         return {
             type: this.type,
-            features: this.features
+            features: this.features.map(f => f.getFeature())
         };
     }
 }
